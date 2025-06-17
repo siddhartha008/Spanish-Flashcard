@@ -1,16 +1,14 @@
-# Web Development Project 2 - *Flag Cards*
+# Web Development Project 2 - *Spanish FlashCards* 
 
-Submitted by: **Siddhartha**
+Submitted by: **Siddhartha Mishra**
 
-This web app: ** Spanish Flashcard is an interactive flash card app that helps you learn Spanish vocabulary. Try the buttons to move between different Spanish vocabs questions **
+This web app: Spanish Flashcard is an interactive flash card app that helps you learn Spanish vocabulary. Try the buttons to move between different Spanish vocabs questions **
 
 Time spent: **6** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
-
-
 - [x] **The app displays the title of the card set, a short description, and the total number of cards**
   - [x] Title of card set is displayed 
   - [x] A short description of the card set is displayed 
@@ -32,14 +30,13 @@ The following **optional** features are implemented:
   - A ring of green, yellow or red around the card depending on the difficulty which correspponds to general perceptions on the recognizability of the flags. 
 
 The following **additional** features are implemented:
-
 * [x] Continuous looping through all cards indefinitely, so the 10 questions keep appearing repeatedly without stopping
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-<img src='./src/assets/proj2.gif title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
+<img src='./src/assets/proj2.gif' title='GIF Walkthrough' width='' alt='GIF Walkthrough' />
 
 
 GIF created with ...  
