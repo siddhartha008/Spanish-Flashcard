@@ -25,9 +25,8 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [] Cards contain images in addition to or in place of text
-  - [] Some or all cards have images in place of or in addition to text
+- [] Some or all cards have images in place of or in addition to text
 - [] Cards have different visual styles such as color based on their category
-  - A ring of green, yellow or red around the card depending on the difficulty which correspponds to general perceptions on the recognizability of the flags. 
 
 The following **additional** features are implemented:
 * [x] Continuous looping through all cards indefinitely, so the 10 questions keep appearing repeatedly without stopping
