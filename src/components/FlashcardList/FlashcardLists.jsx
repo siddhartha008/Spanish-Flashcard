@@ -5,22 +5,40 @@ import Flashcard from "../Flashcard/Flashcard";
 const FlashcardList = () => {
   const [currIndex, setCurrIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [answerState, setAnswerState] = useState("");
+  const [feedback, setFeedback] = useState(""); 
+  const currQues = flashcardsData[currIndex];
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (answerState.trim().toLowerCase() === currQues.answer.trim().toLowerCase()) {
+    setFeedback("correct");
+  } else {
+    setFeedback("incorrect");
+  }
+};
 
   const goPrev = () => {
-    setIsFlipped(false);
-    setCurrIndex((prev) => (prev > 0 ? prev - 1 : flashcardsData.length - 1));
+    if (currIndex > 0) {
+      setCurrIndex(currIndex - 1);
+      resetState(); 
+    }
   };
 
   const goNext = () => {
-    let randomIndex;
-    do {
-      randomIndex = Math.floor(Math.random() * flashcardsData.length);
-    } while (randomIndex === currIndex);
-    setIsFlipped(false); // Reset to question side
-    setCurrIndex(randomIndex);
+    if (currIndex < flashcardsData.length - 1) { 
+      setCurrIndex(currIndex + 1)
+      resetState();
+    }
   };
 
-  const currQues = flashcardsData[currIndex];
+
+  const resetState = () => { 
+    setIsFlipped(false);
+    setAnswerState("");
+    setFeedback("")
+    
+  }
 
   return (
     <div>
@@ -30,14 +48,34 @@ const FlashcardList = () => {
         isFlipped={isFlipped}
         onFlip={() => setIsFlipped((prev) => !prev)}
       />
+
+<div className="formDiv">
+
+<form onSubmit={handleSubmit}>
+          <input className="formInput" placeholder="Type your answer" type="text" value ={answerState} onChange={(e) => setAnswerState(e.target.value)}>
+          </input>
+          <button type="submit">
+            Submit
+          </button>
+          {feedback === "correct" && (
+          <p className="correctFeedback"> Correct!</p>
+        )}
+        {feedback === "incorrect" && (
+          <p className="incorrectFeedback">Try again!</p>
+        )}
+        </form>
+        </div>
+      
       <div className="navigation-buttons">
-        <button className="nav-button" onClick={goPrev}>
+        <button onClick={goPrev} className={currIndex===0 ? "disabledNavButton" : "nav-button" }>
           Previa
         </button>
-        <button className="nav-button" onClick={goNext}>
+        <button onClick={goNext} className={currIndex===flashcardsData.length - 1 ? "disabledNavButton" : "nav-button"}>
           Próxima (Next)
         </button>
       </div>
+
+  
     </div>
   );
 };

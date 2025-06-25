@@ -5,19 +5,6 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -37,6 +24,34 @@
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+.formDiv {
+  margin-top: 1em;
+}
+
+.formInput {
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+  border: none;
+}
+
+.correctFeedback {
+  background-color: #5dc7a4;
+  margin: auto;
+  width: 30%;
+  border-radius: 1em;
+}
+
+.incorrectFeedback {
+  background-color: #cf3e81;
+  margin: auto;
+  width: 30%;
+  border-radius: 1em;
+  color: #fff;
+}
+
+
+.disabledNavButton { 
+  cursor: not-allowed;
+  background: gray; 
 }
